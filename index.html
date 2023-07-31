@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>Happy Birthday!</title>
+    <style>
+      body {
+        -webkit-font-smoothing: antialiased;
+        font-family: Helvetica Neue, Helvetica, Hiragino Sans GB,
+          Microsoft YaHei, Arial, sans-serif;
+        font-size: 85%;
+        margin: 0;
+      }
+
+      .container {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        background-image: url("image2.jpg");
+        background-size: cover;
+        background-position: center;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+      }
+
+      h2 {
+        font-size: 130%;
+        font-weight: 400;
+        color: black;
+      }
+
+      h1 {
+        font-size: 220%;
+        font-weight: 400;
+        color: black;
+      }
+      .content {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+      }
+
+      .timer {
+        font-size: 180%;
+        line-height: 1.5;
+        margin: 1em 0;
+        white-space: nowrap;
+        display: inline;
+      }
+
+      .timer b {
+        color: #d74e09;
+        white-space: nowrap;
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <h1><strong>意纯宝宝，我们已经在一起了</strong></h1>
+        <img src="pig_chuanshengtong1.jpeg" width="50" />
+        <div class="timer">
+          <b id="d"></b> Days <b id="h"></b> Hours <b id="m"></b> Minutes
+          <b id="s"></b> Seconds
+        </div>
+        <img src="pig_chuanshengtong2.jpeg" width="50" />
+        <h2>祝你生日快乐🎂，这段日子我们经历了很多很多！也是我最快乐的时光</h2>
+        <h2>这是我们第一次出去玩</h2>
+
+        <img src="pig_jiaolv.jpeg" width="200" />
+        <img src="pig_shengdan.jpeg" width="200" /><br />
+        <img src="pig_eat.jpeg" width="200" />
+      </div>
+    </div>
+    <script language="javascript">
+      function show_date_time() {
+        window.setTimeout("show_date_time()", 1000);
+        BirthDay = new Date("11/28/2022 22:30:00"); //这个日期是可以修改的
+        today = new Date();
+        timeold = today.getTime() - BirthDay.getTime();
+        sectimeold = timeold / 1000;
+        secondsold = Math.floor(sectimeold);
+        msPerDay = 24 * 60 * 60 * 1000;
+        e_daysold = timeold / msPerDay;
+        daysold = Math.floor(e_daysold);
+        e_hrsold = (e_daysold - daysold) * 24;
+        hrsold = Math.floor(e_hrsold);
+        e_minsold = (e_hrsold - hrsold) * 60;
+        minsold = Math.floor((e_hrsold - hrsold) * 60);
+        seconds = Math.floor((e_minsold - minsold) * 60);
+        document.getElementById("d").innerHTML = daysold;
+        document.getElementById("h").innerHTML = hrsold;
+        document.getElementById("m").innerHTML = minsold;
+        document.getElementById("s").innerHTML = seconds;
+      }
+      show_date_time();
+    </script>
+  </body>
+</html>
